@@ -10,36 +10,6 @@ foreach ($csv as $fields) {
 fclose($fp);
 
 
-/*
-$months = array(array('month','max','min'));
-
-foreach ($csv as $row) {
-    $a = floatval($row['sum']);
-    $month = date('Y_m', strtotime($row["date"]));
-    $months[$month]['month'] = $month;
-    if (isset($months[$month]['max'])) {
-        $months[$month]['max'] = max($months[$month]['max'], $a);
-    } else {
-        $months[$month]['max'] = $a;
-    }
-    if (isset($months[$month]['min'])) {
-        $months[$month]['min'] = min($months[$month]['min'], $a);
-    } else {
-        $months[$month]['min'] = $a;
-    }
-}
-
-// var_dump($months);
-
-$fp = fopen('months.csv', 'w');
-foreach ($months as $fields) {
-    fputcsv($fp, $fields);
-}
-fclose($fp);
-*/
-
-
-
 /**
  * Will process a given QIF file. Will loop through the file and will send all transactions to the transactions API.
  *
