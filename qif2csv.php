@@ -1,9 +1,9 @@
 <?php
 
 
-$csv = qif('export.QIF');
+$csv = qif('php://stdin');
 
-$fp = fopen('file.csv', 'w');
+$fp = fopen('php://stdout', 'w');
 foreach ($csv as $fields) {
     fputcsv($fp, $fields);
 }
