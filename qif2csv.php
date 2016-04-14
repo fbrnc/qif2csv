@@ -53,7 +53,9 @@ function qif($file, $offset=0)
     $lines = file($file);
 
     $records = array();
-    $record = array();
+    // return all of the data in the same order every time
+    $headers=array_fill_keys(array('date', 'investment', 'payee', 'amount', 'sum'), null);
+    $record = $headers;
     $end = 0;
 
     foreach ($lines as $line) {
@@ -123,7 +125,7 @@ function qif($file, $offset=0)
             $records[] = $record;
 
             // Rest the $record array
-            $record = array();
+            $record = $headers;
 
             // Set $end to false so that we can now build the new record for the next transaction
             $end = 0;
